@@ -12,7 +12,8 @@ import { faChevronLeft, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 /* import font awesome icon component */
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-
+import store from "./store/index";
+import Vuex from "vuex";
 /* add icons to the library */
 library.add(faChevronLeft, faXmark);
 
@@ -20,8 +21,10 @@ library.add(faChevronLeft, faXmark);
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 Vue.use(VueRouter);
+Vue.use(Vuex);
 
 new Vue({
   render: (h) => h(App),
   router,
+  store,
 }).$mount("#app");
