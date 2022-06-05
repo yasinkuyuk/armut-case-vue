@@ -1,5 +1,8 @@
 <template>
-  <div class="shadow-md rounded-lg border-gray-300 bg-white m-6 h-96">
+  <div
+    class="shadow-md rounded-lg border-gray-300 bg-white m-6 h-96"
+    @click="test"
+  >
     <h2 class="bg-myGray px-4 py-2 rounded-t-lg">Servisler</h2>
     <ul>
       <div
@@ -22,7 +25,14 @@ export default {
   data() {
     return {
       services: services,
+      increment: 0,
     };
+  },
+  methods: {
+    test() {
+      this.increment++;
+      console.log(this.increment);
+    },
   },
 };
 </script>
