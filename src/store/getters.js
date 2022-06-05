@@ -5,6 +5,9 @@ const getters = {
   questions(state) {
     return state.questions;
   },
+  service(state) {
+    return state.service;
+  },
 };
 
 export default getters;

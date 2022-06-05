@@ -4,13 +4,7 @@
       <img :src="option.valueImageUrl" class="text-center mx-auto" />
     </div>
     <div class="py-3 px-2">
-      <input
-        type="radio"
-        class="accent-myGreen mr-1"
-        :checked="checked"
-        @click="test"
-        aria-label="dasdas"
-      />
+      <input type="radio" class="accent-[green] mr-1" aria-label="dasdas" />
       <label class="text-sm">{{ option.value }}</label>
     </div>
   </div>

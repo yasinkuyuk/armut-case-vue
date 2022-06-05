@@ -2,11 +2,16 @@ export const routes = [
   {
     path: "/",
     name: "index",
-    component: () => import("@/pages/ServicePage/index.vue"),
+    component: () => import("@/pages/ServicePage"),
   },
   {
-    path: "/questions/:id",
-    name: "ques",
-    component: () => import("@/pages/ServiceQuestions/index.vue"),
+    path: "/service/:id",
+    name: "service",
+    component: () => import("@/pages/ServiceQuestions"),
+  },
+  {
+    path: "/success",
+    name: "success",
+    component: () => import("@/pages/SuccessPage"),
   },
 ];

@@ -11,6 +11,8 @@
       font-medium
       text-sm
       placeholder:font-normal
+      focus:ring-0
+      focus-visible:border-none
     "
     style="resize: none"
     :placeholder="placeholder"

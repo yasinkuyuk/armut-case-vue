@@ -1,5 +1,6 @@
 const state = {
   questions: [],
+  service: {},
   currentIndex: 0,
 };
 
