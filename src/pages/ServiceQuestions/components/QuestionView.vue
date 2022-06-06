@@ -29,7 +29,10 @@
       </div>
 
       <div v-else-if="question.typeId == 8">
-        <CustomTextArea :placeholder="question.placeHolder" />
+        <CustomTextArea :question="question" />
+      </div>
+      <div class="text-[#EE401D] mt-1 text-[10px]" v-if="errorStatus">
+        Bu alan zorunlu
       </div>
     </template>
   </div>
@@ -39,8 +42,12 @@
 import ImageRadioInput from "../../../components/ImageRadioInput.vue";
 import CustomTextArea from "../../../components/CustomTextArea.vue";
 import RadioInput from "../../../components/RadioInput.vue";
+import { mapGetters } from "vuex";
 export default {
   name: "QuestionView",
+  computed: {
+    ...mapGetters(["errorStatus"]),
+  },
   components: {
     ImageRadioInput,
     CustomTextArea,

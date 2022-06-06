@@ -11,6 +11,9 @@ const getters = {
   answers(state) {
     return state.answers;
   },
+  errorStatus(state) {
+    return state.errorStatus;
+  },
 };
 
 export default getters;

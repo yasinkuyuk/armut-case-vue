@@ -6,25 +6,21 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   name: "SuccessPage",
+  computed: {
+    ...mapGetters(["answers"]),
+  },
+  mounted() {
+    this.answers.forEach((element) => {
+      if (element.value.value) {
+        console.log(element.value.value);
+      } else {
+        console.log(element.value);
+      }
+    });
+    this.$store.commit("CLEAR");
+  },
 };
 </script>
-
-<style scoped>
-/* #success-page-container {
-  background-image: url("/images/confeti-background.svg");
-} */
-/* .image-class {
-  position: absolute;
-  top: 58px;
-  left: 16px;
-} */
-/* .text-class {
-  position: absolute;
-  left: 85px;
-  top: 86px;
-  font-size: 18px;
-  font-weight: bold;
-} */
-</style>

@@ -15,17 +15,39 @@
       focus-visible:border-none
     "
     style="resize: none"
-    :placeholder="placeholder"
+    :placeholder="question.placeHolder"
+    v-model="content"
+    @change="setAnswer"
   />
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   name: "CustomTextArea",
+  data() {
+    return {
+      content: null,
+    };
+  },
+  computed: {
+    ...mapGetters(["answers"]),
+  },
+  methods: {
+    setAnswer() {
+      if (this.content == "") {
+        this.$store.commit("REMOVE_TEXT_FROM_ANSWERS", this.question.id);
+      }
+      this.$store.commit("APPEND_TO_ANSWERS", {
+        questionId: this.question.id,
+        value: this.content,
+      });
+    },
+  },
   props: {
-    placeholder: {
-      type: String,
-      default: "",
+    question: {
+      type: Object,
+      default: () => {},
     },
   },
 };

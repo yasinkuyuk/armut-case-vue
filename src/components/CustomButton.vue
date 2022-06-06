@@ -28,10 +28,10 @@ export default {
           (el) => el.questionId == this.questions[this.currentIndex].id
         ) == 0
       ) {
+        this.$store.commit("TOGGLE_ERROR_STATUS");
         return;
       }
       if (this.buttonContent == "TALEP GÖNDER") {
-        this.$store.commit("clear");
         this.$router.push({ name: "success" });
       } else {
         this.$store.commit("INCREMENT_CURRENT_INDEX");

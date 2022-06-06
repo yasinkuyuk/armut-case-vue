@@ -4,6 +4,7 @@ const mutations = {
   },
   INCREMENT_CURRENT_INDEX(state) {
     state.currentIndex++;
+    state.errorStatus = false;
   },
   DECREMENT_CURRENT_INDEX(state) {
     state.currentIndex--;
@@ -18,10 +19,10 @@ const mutations = {
     state.answers = [...state.answers, answer];
   },
   REMOVE_FROM_ANSWERS(state, answer) {
-    console.log("remove");
-    console.log(state.answers);
     state.answers = state.answers.filter((el) => el.value.id != answer.id);
-    console.log(state.answers);
+  },
+  REMOVE_TEXT_FROM_ANSWERS(state, questionId) {
+    state.answers = state.answers.filter((el) => el.questionId != questionId);
   },
   SET_SERVICE(state, service) {
     state.service = service;
@@ -31,6 +32,9 @@ const mutations = {
     state.questions = [];
     state.service = {};
     state.answers = [];
+  },
+  TOGGLE_ERROR_STATUS(state) {
+    state.errorStatus = !state.errorStatus;
   },
 };
 
