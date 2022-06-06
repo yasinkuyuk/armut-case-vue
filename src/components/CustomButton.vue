@@ -8,8 +8,12 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
   name: "CustomButton",
+  computed: {
+    ...mapGetters(["questions", "currentIndex", "answers"]),
+  },
   props: {
     buttonContent: {
       type: String,
@@ -18,11 +22,20 @@ export default {
   },
   methods: {
     nextQuestion() {
+      if (
+        this.questions[this.currentIndex].required &&
+        this.answers.filter(
+          (el) => el.questionId == this.questions[this.currentIndex].id
+        ) == 0
+      ) {
+        return;
+      }
       if (this.buttonContent == "TALEP GÖNDER") {
         this.$store.commit("clear");
         this.$router.push({ name: "success" });
+      } else {
+        this.$store.commit("INCREMENT_CURRENT_INDEX");
       }
-      this.$store.commit("INCREMENT_CURRENT_INDEX");
     },
   },
 };

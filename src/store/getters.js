@@ -8,6 +8,9 @@ const getters = {
   service(state) {
     return state.service;
   },
+  answers(state) {
+    return state.answers;
+  },
 };
 
 export default getters;

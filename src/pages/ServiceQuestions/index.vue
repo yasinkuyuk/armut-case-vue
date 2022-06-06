@@ -60,7 +60,6 @@ export default {
     }
 
     this.$store.commit("SET_QUESTIONS", questions);
-    console.log(this.questions);
   },
 };
 </script>

@@ -40,7 +40,6 @@ export default {
   },
   methods: {
     clearStore() {
-      console.log("cleared");
       this.$store.commit("CLEAR");
     },
     previousQuestion() {

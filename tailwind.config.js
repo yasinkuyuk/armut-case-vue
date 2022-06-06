@@ -1,7 +1,11 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        // success: "url('/images/confeti-background.svg')",
+      },
+    },
     colors: {
       myGray: "#f8f8f8",
       myGreen: "#2CB34F",

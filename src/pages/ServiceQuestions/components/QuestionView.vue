@@ -11,7 +11,11 @@
           v-for="option in question.values"
           :key="option.id"
         >
-          <ImageRadioInput class="mb-4 mx-2" :option="option" />
+          <ImageRadioInput
+            class="mb-4 mx-2"
+            :option="option"
+            :questionId="question.id"
+          />
         </div>
       </div>
 
@@ -20,10 +24,11 @@
           v-for="value in question.values"
           :key="value.id"
           :value="value"
+          :questionId="question.id"
         />
       </div>
 
-      <div v-else>
+      <div v-else-if="question.typeId == 8">
         <CustomTextArea :placeholder="question.placeHolder" />
       </div>
     </template>
