@@ -4,6 +4,7 @@ const state = {
   currentIndex: 0,
   answers: [],
   errorStatus: false,
+  services: [],
 };
 
 export default state;

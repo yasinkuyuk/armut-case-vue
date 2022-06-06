@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-6">
+  <div class="mx-6" v-if="question">
     <div class="p-6 font-bold text-lg text-center">
       {{ question.label }}
     </div>

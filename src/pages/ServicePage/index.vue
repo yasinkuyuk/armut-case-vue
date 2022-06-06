@@ -12,14 +12,19 @@
 </template>
 
 <script>
-import services from "../../data/services.json";
+import { mapGetters } from "vuex";
 export default {
   name: "ServicePage",
+  computed: {
+    ...mapGetters(["services"]),
+  },
   data() {
     return {
-      services: services,
       increment: 0,
     };
+  },
+  async mounted() {
+    await this.$store.dispatch("getServices");
   },
 };
 </script>

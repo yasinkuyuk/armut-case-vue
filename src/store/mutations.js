@@ -36,6 +36,9 @@ const mutations = {
   TOGGLE_ERROR_STATUS(state) {
     state.errorStatus = !state.errorStatus;
   },
+  SET_SERVICES(state, services) {
+    state.services = services;
+  },
 };
 
 export default mutations;

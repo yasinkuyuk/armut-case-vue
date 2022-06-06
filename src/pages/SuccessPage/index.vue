@@ -13,6 +13,7 @@ export default {
     ...mapGetters(["answers"]),
   },
   mounted() {
+    this.$store.dispatch("getServices");
     this.answers.forEach((element) => {
       if (element.value.value) {
         console.log(element.value.value);

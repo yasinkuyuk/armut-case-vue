@@ -7,6 +7,9 @@
 <script>
 export default {
   name: "App",
+  async mounted() {
+    await this.$store.dispatch("getServices");
+  },
 };
 </script>
 

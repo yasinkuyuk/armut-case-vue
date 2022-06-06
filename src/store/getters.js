@@ -14,6 +14,9 @@ const getters = {
   errorStatus(state) {
     return state.errorStatus;
   },
+  services(state) {
+    return state.services;
+  },
 };
 
 export default getters;

@@ -1,5 +1,5 @@
 <template>
-  <div v-if="service">
+  <div v-if="service != {}">
     <ServiceHeader :serviceName="service.name" />
     <PriceHeader :price="service.price" />
 
@@ -21,10 +21,7 @@ import PriceHeader from "./components/PriceHeader.vue";
 import DiscountView from "./components/DiscountView.vue";
 import QuestionView from "./components/QuestionView.vue";
 import CustomButton from "../../components/CustomButton.vue";
-import services from "../../data/services.json";
 import { mapGetters } from "vuex";
-import QUESTIONS_399 from "../../data/399-questions.json";
-import QUESTIONS_262 from "../../data/262-questions.json";
 
 export default {
   name: "ServiceQuestions",
@@ -36,7 +33,7 @@ export default {
     CustomButton,
   },
   computed: {
-    ...mapGetters(["service", "questions", "currentIndex"]),
+    ...mapGetters(["service", "questions", "currentIndex", "services"]),
     buttonText() {
       if (this.questions.length == this.currentIndex + 1) {
         return "TALEP GÖNDER";
@@ -45,21 +42,15 @@ export default {
       }
     },
   },
-  created() {
+  async created() {
     this.$store.commit(
       "SET_SERVICE",
-      services.filter(
+      this.services.filter(
         (service) => service.serviceId == this.$route.params.id
       )[0]
     );
-    let questions = [];
-    if (this.service.serviceId == 262) {
-      questions = QUESTIONS_262;
-    } else {
-      questions = QUESTIONS_399;
-    }
 
-    this.$store.commit("SET_QUESTIONS", questions);
+    await this.$store.dispatch("getQuestions", this.$route.params.id);
   },
 };
 </script>
