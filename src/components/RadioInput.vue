@@ -1,7 +1,7 @@
 <template>
   <div class="bg-myGray px-2 my-2 py-3 rounded cursor-pointer" @click="toggle">
     <input type="radio" class="accent-[green] mr-2" :checked="checked" />
-    <label class="text-sm font-medium">{{ value.value }}</label>
+    <label class="text-sm font-medium text-bgBlack">{{ value.value }}</label>
   </div>
 </template>
 <script>

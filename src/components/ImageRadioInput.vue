@@ -10,7 +10,7 @@
         :checked="checked"
         :value="option.id"
       />
-      <label class="text-sm">{{ option.value }}</label>
+      <label class="text-sm text-bgBlack">{{ option.value }}</label>
     </div>
   </div>
 </template>
