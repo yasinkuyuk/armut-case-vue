@@ -1,16 +1,18 @@
 <template>
-  <div class="bg-myGray cursor-pointer" @click="toggle">
+  <div class="bg-myGray cursor-pointer truncate" @click="toggle">
     <div class="py-3">
       <img :src="option.valueImageUrl" class="text-center mx-auto" />
     </div>
-    <div class="py-3 px-2">
+    <div class="py-3 px-2 overflow-x-auto">
       <input
         type="radio"
         class="accent-[green] mr-1"
         :checked="checked"
         :value="option.id"
       />
-      <label class="text-sm text-bgBlack">{{ option.value }}</label>
+      <label :title="option.value" class="text-sm text-bgBlack">{{
+        option.value
+      }}</label>
     </div>
   </div>
 </template>

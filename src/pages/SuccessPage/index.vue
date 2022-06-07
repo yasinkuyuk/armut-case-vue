@@ -1,8 +1,14 @@
 <template>
-  <div class="bg-success" id="success-bg">
+  <div id="success-bg" class="h-44">
     <div class="flex items-end font-bold text-bgBlack text-lg pt-14 px-4">
       <div>
-        <img src="/images/confeti.png" alt="" />
+        <img
+          src="/images/confeti.png"
+          height="45"
+          width="45"
+          alt=""
+          class="ml-2"
+        />
       </div>
       <div class="ml-6">
         <span>Talebini aldık!</span>
@@ -32,4 +38,8 @@ export default {
 };
 </script>
 
-z
+<style scoped>
+#success-bg {
+  background-image: url("../../../public/images/confeti-background.svg");
+}
+</style>

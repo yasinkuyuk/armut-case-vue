@@ -1,6 +1,16 @@
 <template>
   <button
-    class="bg-myGreen rounded text-white w-full py-3 text-base font-bold"
+    class="
+      bg-myGreen
+      rounded
+      text-white
+      w-11/12
+      mx-4
+      my-2
+      py-3
+      text-base
+      font-bold
+    "
     @click="nextQuestion"
   >
     {{ buttonContent }}

@@ -5,7 +5,10 @@
     </div>
 
     <template>
-      <div class="grid grid-cols-2 mb-12" v-if="question.typeId == 5">
+      <div
+        class="grid sm:grid-cols-4 md:grid-cols-8 grid-cols-2 mb-12"
+        v-if="question.typeId == 5"
+      >
         <div
           class="col-span-1"
           v-for="option in question.values"

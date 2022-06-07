@@ -1,27 +1,29 @@
 <template>
   <div>
     <div class="flex w-full h-11 px-4 pt-3 pb-4">
-      <div class="w-1/3 justify-start">
+      <div class="w-1/6 justify-start">
         <span class="cursor-pointer" @click="previousQuestion">
           <font-awesome-icon
             v-if="currentIndex != 0"
+            size="lg"
             icon="fa-solid fa-chevron-left text-base cursor-pointer"
         /></span>
       </div>
       <div
-        class="w-1/3 text-center font-semibold text-xs"
+        class="w-4/6 text-center font-semibold"
         v-if="currentIndex + 1 / questions.length > 0.5"
       >
         {{ `%${Math.round(percentage)} TAMAMLANDI` }}
       </div>
-      <div class="w-1/3 text-center font-semibold" v-else>
+      <div class="w-4/6 text-center font-semibold" v-else>
         {{ serviceName }}
       </div>
-      <div class="w-1/3 text-right">
+      <div class="w-1/6 text-right">
         <span @click="clearStore">
           <router-link class="cursor-pointer" to="/"
             ><font-awesome-icon
-              icon="fa-solid fa-xmark cursor-pointer" /></router-link
+              icon="fa-solid fa-xmark cursor-pointer"
+              size="lg" /></router-link
         ></span>
       </div>
     </div>
