@@ -38,10 +38,21 @@ export default {
       if (this.content == "") {
         this.$store.commit("REMOVE_TEXT_FROM_ANSWERS", this.question.id);
       }
-      this.$store.commit("APPEND_TO_ANSWERS", {
-        questionId: this.question.id,
-        value: this.content,
-      });
+
+      if (
+        this.answers.filter((answer) => answer.questionId == this.question.id)
+          .length == 0
+      ) {
+        this.$store.commit("APPEND_TO_ANSWERS", {
+          questionId: this.question.id,
+          value: this.content,
+        });
+      } else {
+        this.$store.commit("UPDATE_ANSWER", {
+          questionId: this.question.id,
+          value: this.content,
+        });
+      }
     },
   },
   props: {
@@ -49,6 +60,15 @@ export default {
       type: Object,
       default: () => {},
     },
+  },
+  mounted() {
+    this.answers.forEach((answer) => {
+      if (answer.value) {
+        if (answer.questionId == this.question.id) {
+          this.content = answer.value;
+        }
+      }
+    });
   },
 };
 </script>

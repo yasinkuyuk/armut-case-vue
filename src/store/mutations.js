@@ -39,6 +39,15 @@ const mutations = {
   SET_SERVICES(state, services) {
     state.services = services;
   },
+  UPDATE_ANSWER(state, answer) {
+    state.answers = state.answers.map((el) => {
+      if (el.questionId == answer.questionId) {
+        return answer;
+      } else {
+        return el;
+      }
+    });
+  },
 };
 
 export default mutations;
