@@ -1,7 +1,13 @@
 <template>
   <div class="bg-success" id="success-bg">
-    <img class="absolute" src="/images/confeti.png" alt="" />
-    <span class="absolute text-lg font-bold">Talebini aldık!</span>
+    <div class="flex items-end font-bold text-bgBlack text-lg pt-14 px-4">
+      <div>
+        <img src="/images/confeti.png" alt="" />
+      </div>
+      <div class="ml-6">
+        <span>Talebini aldık!</span>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -25,3 +31,5 @@ export default {
   },
 };
 </script>
+
+z

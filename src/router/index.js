@@ -6,4 +6,13 @@ const router = new VueRouter({
   mode: "history",
 });
 
+// Protecting success page from external requests
+router.beforeEach((to, from, next) => {
+  if (to.name == "success" && from.name != "service") {
+    next("/");
+  } else {
+    next();
+  }
+});
+
 export default router;

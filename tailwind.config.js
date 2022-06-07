@@ -3,7 +3,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        // success: "url('/images/confeti-background.svg')",
+        // success: "require('/images/confeti.png')",
       },
     },
     colors: {
