@@ -43,6 +43,7 @@ export default {
       this.$store.commit("CLEAR");
     },
     previousQuestion() {
+      this.$store.commit("SET_ERROR_STATUS", false);
       this.$store.commit("DECREMENT_CURRENT_INDEX");
     },
   },

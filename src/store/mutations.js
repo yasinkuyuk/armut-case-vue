@@ -33,8 +33,8 @@ const mutations = {
     state.service = {};
     state.answers = [];
   },
-  TOGGLE_ERROR_STATUS(state) {
-    state.errorStatus = !state.errorStatus;
+  SET_ERROR_STATUS(state, value) {
+    state.errorStatus = value;
   },
   SET_SERVICES(state, services) {
     state.services = services;

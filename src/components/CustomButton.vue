@@ -28,7 +28,7 @@ export default {
           (el) => el.questionId == this.questions[this.currentIndex].id
         ) == 0
       ) {
-        this.$store.commit("TOGGLE_ERROR_STATUS");
+        this.$store.commit("SET_ERROR_STATUS", true);
         return;
       }
       if (this.buttonContent == "TALEP GÖNDER") {
