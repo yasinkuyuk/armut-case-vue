@@ -15,4 +15,12 @@ router.beforeEach((to, from, next) => {
   }
 });
 
+router.beforeEach((to, from, next) => {
+  if (to.name == "service" && from.name != "index") {
+    next("/");
+  } else {
+    next();
+  }
+});
+
 export default router;

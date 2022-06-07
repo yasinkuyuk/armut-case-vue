@@ -8,7 +8,15 @@
             icon="fa-solid fa-chevron-left text-base cursor-pointer"
         /></span>
       </div>
-      <div class="w-1/3 text-center font-semibold">{{ serviceName }}</div>
+      <div
+        class="w-1/3 text-center font-semibold text-xs"
+        v-if="currentIndex + 1 / questions.length > 0.5"
+      >
+        {{ `%${Math.round(percentage)} TAMAMLANDI` }}
+      </div>
+      <div class="w-1/3 text-center font-semibold" v-else>
+        {{ serviceName }}
+      </div>
       <div class="w-1/3 text-right">
         <span @click="clearStore">
           <router-link class="cursor-pointer" to="/"
@@ -17,7 +25,7 @@
         ></span>
       </div>
     </div>
-    <ProgressBar />
+    <ProgressBar :percentage="percentage" />
   </div>
 </template>
 
@@ -30,7 +38,10 @@ export default {
     ProgressBar,
   },
   computed: {
-    ...mapGetters(["currentIndex"]),
+    ...mapGetters(["currentIndex", "questions"]),
+    percentage() {
+      return ((this.currentIndex + 1) * 100) / this.questions.length;
+    },
   },
   props: {
     serviceName: {

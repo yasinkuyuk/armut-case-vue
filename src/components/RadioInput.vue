@@ -25,6 +25,7 @@ export default {
           value: this.value,
           questionId: this.questionId,
         });
+        this.$store.commit("SET_ERROR_STATUS", false);
         eventBus.$emit("option selected", this.value.id, this.questionId);
       } else {
         this.$store.commit("REMOVE_FROM_ANSWERS", this.value);
