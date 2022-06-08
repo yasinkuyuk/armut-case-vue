@@ -9,9 +9,7 @@
     />
     <QuestionView :question="questions[currentIndex]" />
 
-    <div class="fixed bottom-0 w-full">
-      <CustomButton :buttonContent="buttonText" class="text-white" />
-    </div>
+    <CustomButton :buttonContent="buttonText" class="text-white" />
   </div>
 </template>
 
