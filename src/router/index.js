@@ -7,13 +7,13 @@ const router = new VueRouter({
 });
 
 // Protecting success page from external requests
-// router.beforeEach((to, from, next) => {
-//   if (to.name == "success" && from.name != "service") {
-//     next("/");
-//   } else {
-//     next();
-//   }
-// });
+router.beforeEach((to, from, next) => {
+  if (to.name == "success" && from.name != "service") {
+    next("/");
+  } else {
+    next();
+  }
+});
 
 router.beforeEach((to, from, next) => {
   if (to.name == "service" && from.name != "index") {

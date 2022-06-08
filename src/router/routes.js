@@ -2,16 +2,16 @@ export const routes = [
   {
     path: "/",
     name: "index",
-    component: () => import("@/pages/ServicePage"),
+    component: () => import("@/views/ServicePage"),
   },
   {
     path: "/service/:id",
     name: "service",
-    component: () => import("@/pages/ServiceQuestions"),
+    component: () => import("@/views/ServiceQuestions"),
   },
   {
     path: "/success",
     name: "success",
-    component: () => import("@/pages/SuccessPage"),
+    component: () => import("@/views/SuccessPage"),
   },
 ];
