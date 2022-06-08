@@ -9,7 +9,7 @@
     />
     <QuestionView :question="questions[currentIndex]" />
 
-    <div class="fixed bottom-0 w-full">
+    <div class="flex items-center justify-center">
       <CustomButton :buttonContent="buttonText" class="text-white" />
     </div>
   </div>
